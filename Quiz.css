@@ -1,2 +1,25 @@
 body {
     background-color: #f0ead9;
+}
+
+.questionContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    /* background-color: silver; */
+    width: 50%;
+    margin-top: 5rem;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
