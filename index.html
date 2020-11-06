@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drummer's Quiz</title>
-    <link rel="stylesheet" href="notQuiz.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="main">
-        <h1 class="title">Drummer's Quiz</h1>
-            <section class="mainSection">
-                <p class="introP">Are you a drummer? Yeah. Ok. But are you REALLY a drummer? If you think you've got the rhythm, then take this quiz to find out! As soon as you click the button below, you'll only have 10 seconds to answer each question so you'd better have some chops. Add your name to the <b>Scoreboard</b> to see how you rank against other drummers when you reach the end. \m/</p>      
-            </section>
-                <div class="buttonDiv">
-                    <!-- <a src="quizindex.html"> -->
- <!-- need to make this onlick with JS! --><button class="startButton" onclick="location.href = 'quizindex.html';">Let's Go!</button>
-                    <!-- </a> -->
+        <div class="start-screen">
+            <h1 class="title">Drummer's Quiz</h1>
+                <section class="mainSection">
+                    <p class="introP">Are you a drummer? Yeah. Ok. But are you REALLY a drummer? If you think you've got the rhythm, then take this quiz to find out! As soon as you click the button below, you'll only have 10 seconds to answer each question so you'd better have some chops. Add your name to the <b>Scoreboard</b> to see how you rank against other drummers when you reach the end. \m/</p>      
+                </section>
+                    <div class="buttonDiv">
+                        <!-- <a src="quizindex.html"> -->
+    <!-- need to make this onlick with JS! --><button class="startButton">Let's Go!</button>
+                        <!-- </a> -->
+                    </div>
+        </div>
+        <div class="full-question">
+            <div class="questionContainer">
+            <h2 class="question">This is the question that is being asked</h2>
+            </div>
+                <div class="options">
+                    <div class="option1">Option1</div>
+                    <div class="option2">Option2</div>
+                    <div class="option3">Option3</div>
+                    <div class="option4">Option4</div>
                 </div>
+            </div>
                 
     </main>
 </body>

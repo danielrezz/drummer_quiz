@@ -2,6 +2,42 @@ body {
     background-color: #f0ead9;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 4rem;
+    font-size: 60px;
+}
+
+.mainSection {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 0 10rem 4rem 10rem;
+    font-size: 32px;
+}
+
+.startButton {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background-color: silver;
+    font-size: 48px;
+    border: solid black 4px;
+    border-radius: 4px;
+}
+
+.startButton:hover {
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size: 49px;
+    color: #ffffff;
+}
+
 .questionContainer {
     display: flex;
     justify-content: center;
