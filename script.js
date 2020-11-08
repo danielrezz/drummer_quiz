@@ -2,6 +2,8 @@
 
 var renderQuestion = document.getElementById("question");
 var renderOptions = document.querySelector(".options");
+// var optionBtn = document.createElement("button");
+// optionBtn.className = "btn btn-primary";
 
 function startFunction() {
     var startScreen = document.getElementById("start-screen");
@@ -46,12 +48,40 @@ if(index <= questionList) {
     clearInterval(timerInterval);
 }
 };
+
 function optionsList() {
     var options = questions[index].choices;
     for (var a = 0; a < options.length; a++) {
         var optionBtn = document.createElement("button");
         optionBtn.className = "btn btn-primary";
         optionBtn.innerHTML = options[a];
+        console.log(a)
+        console.log(options[a]);
         renderOptions.append(optionBtn);
+        optionBtn.addEventListener("click", function() {
+            while (renderOptions.hasChildNodes()) {  
+                renderOptions.removeChild(renderOptions.firstChild);
+              }
+            index++;
+            questionList();
+        })
     }
 }
+
+if (optionBtn.addEventListener("click")) {
+    clearInterval(timerInterval);
+}
+// optionBtn.addEventListener("click", function() {
+//     console.log("here");
+//     return index++;
+// })
+
+// for (var i = 0; i < questions.length; i++) {
+//     var optionBtn = document.getElementsByClassName("btn");
+//     var response = optionBtn.addEventListener("click");
+//     var score = 0;
+//     if (response === questions[1].answer) {
+//         score++;
+//         alert(correct);
+//     }
+// }
