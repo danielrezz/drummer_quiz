@@ -2,26 +2,38 @@ body {
     background-color: #f0ead9;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
 h1 {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: auto;
-    padding: 4rem;
+    padding: 4rem 4rem 2rem 4rem;
     font-size: 60px;
 }
 
-.full-question {
-    display: none;
-}
+/* .full-question {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 100%;
+} */
 
 .mainSection {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: auto;
-    padding: 0 10rem 4rem 10rem;
+    padding: 0 0rem 4rem 0rem;
     font-size: 32px;
+    width: 90%;
+    height: 100%;
 }
 
 #timer {
@@ -29,9 +41,10 @@ h1 {
     justify-content: center;
     text-align: center;
     margin: auto;
-    font-size: 8rem;
-    padding: 10px;
-    margin-top: 50px;
+    font-size: 6rem;
+    z-index: 999;
+    /* padding: 10px; */
+    padding-top: 20px;
 }
 
 .startButton {
@@ -74,6 +87,8 @@ h1 {
 .questionContainer {
     display: flex;
     justify-content: center;
+    width: auto;
+    height: auto;
 }
 
 .question {
@@ -81,20 +96,23 @@ h1 {
     justify-content: center;
     font-size: 48px;
     /* background-color: silver; */
-    width: 50%;
-    margin-top: 3rem;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .options {
     display: flex;
-    width: 30%;
-    flex-direction: column;
-    text-align: left;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    width: 50%;
+    flex-direction: row;
     font-size: 36px;
     margin: auto;
 }
 
 .option1 {
+    display: flex;
+    justify-content: space-around;
     border: solid silver 0.5rem;
     padding: 2px;
     margin: 10px;
@@ -106,6 +124,8 @@ h1 {
     padding: 2px;
     margin: 10px;
     border-radius: 4px;
+    display: flex;
+    align-self: flex-end;
 }
 
 .option3 {

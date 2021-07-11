@@ -1,80 +1,120 @@
-// Screen changes to question once user clicks on Start button
-
 var renderQuestion = document.getElementById("question");
 var renderOptions = document.querySelector(".options");
+var timer = document.querySelector("#timer");
+var totalSeconds = 10;
+var secondsElapsed = 10;
+var index = 0;
+var interval;
 // var optionBtn = document.createElement("button");
 // optionBtn.className = "btn btn-primary";
 
 function startFunction() {
-    var startScreen = document.getElementById("start-screen");
-    var questionStart = document.querySelector(".full-question");
+  var startScreen = document.getElementById("start-screen");
+  var questionStart = document.querySelector(".full-question");
+  var timer = document.querySelector("#timer");
+
   if (startScreen.style.display === "none") {
+    timer.style.display === "none";
     startScreen.style.display = "block";
     questionStart.style.display = "none";
   } else {
+    timer.style.display = "block";
     startScreen.style.display = "none";
     questionStart.style.display = "block";
-    setTime();
+    renderTime();
+    startTimer();
     questionList();
   }
 }
 
-// function for creating countdown timer
-var timer = document.getElementById("timer");
+function getFormattedSeconds() {
+  var secondsLeft = (totalSeconds - secondsElapsed) % 60;
 
-var secondsLeft = 10;
-var index = 0;
+  var formattedSeconds;
+
+  if (secondsLeft < 10) {
+    formattedSeconds = "0" + secondsLeft;
+  } else {
+    formattedSeconds = secondsLeft;
+  }
+
+  return formattedSeconds;
+}
 
 function setTime() {
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timer.textContent = secondsLeft;
+  clearInterval(interval);
+}
 
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
+function renderTime() {
+  timer.textContent = getFormattedSeconds();
+  if (secondsElapsed >= totalSeconds) {
+    stopTimer();
+  }
+}
+
+function startTimer() {
+  setTime();
+
+  interval = setInterval(function () {
+    secondsElapsed++;
+    timer.textContent = secondsElapsed;
+
+    renderTime();
+
+    if (secondsElapsed === 0) {
+      for (var a = 0; a < 3; a++) {
+        while (renderOptions.hasChildNodes()) {
+          renderOptions.removeChild(renderOptions.firstChild);
         }
+      }
+      alert("Not quite my tempo... Hit OK to continue.");
+      index++;
+      questionList();
+      stopTimer();
+      startTimer();
+    }
+  }, 1000);
+}
 
-    }, 1000)
+function stopTimer() {
+  secondsElapsed = 0;
+  setTime();
+  renderTime();
 }
 
 function questionList() {
+  var questionList = questions.length - 1;
 
-var questionList = questions.length -1;
-
-if(index <= questionList) {
+  if (index <= questionList) {
     renderQuestion.innerHTML = questions[index].question;
     optionsList();
-} else {
-    clearInterval(timerInterval);
+  } else {
+    timer.style.display = "none";
+    renderTime();
+    renderQuestion.innerHTML = "Quiz complete!";
+    renderOptions.appendChild(document.querySelector(".scoreButton"));
+  }
 }
-};
 
 function optionsList() {
-    var options = questions[index].choices;
-    for (var a = 0; a < options.length; a++) {
-        var optionBtn = document.createElement("button");
-        optionBtn.className = "btn btn-primary";
-        optionBtn.innerHTML = options[a];
-        console.log(a)
-        console.log(options[a]);
-        renderOptions.append(optionBtn);
-        optionBtn.addEventListener("click", function() {
-            while (renderOptions.hasChildNodes()) {  
-                renderOptions.removeChild(renderOptions.firstChild);
-              }
-            index++;
-            questionList();
-        })
-    }
+  renderTime();
+  var options = questions[index].choices;
+  for (var a = 0; a < options.length; a++) {
+    var optionBtn = document.createElement("button");
+    optionBtn.className = "btn btn-primary";
+    optionBtn.innerHTML = options[a];
+    renderOptions.append(optionBtn);
+    optionBtn.addEventListener("click", function () {
+      while (renderOptions.hasChildNodes()) {
+        renderOptions.removeChild(renderOptions.firstChild);
+      }
+      index++;
+      questionList();
+      stopTimer();
+      startTimer();
+    });
+  }
 }
-
-if (optionBtn.addEventListener("click")) {
-    clearInterval(timerInterval);
-}
-// optionBtn.addEventListener("click", function() {
-//     console.log("here");
-//     return index++;
-// })
 
 // for (var i = 0; i < questions.length; i++) {
 //     var optionBtn = document.getElementsByClassName("btn");
