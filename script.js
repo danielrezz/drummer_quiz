@@ -5,6 +5,7 @@ var totalSeconds = 10;
 var secondsElapsed = 10;
 var index = 0;
 var interval;
+var finalScore = 0;
 // var optionBtn = document.createElement("button");
 // optionBtn.className = "btn btn-primary";
 
@@ -91,23 +92,29 @@ function questionList() {
   } else {
     timer.style.display = "none";
     renderTime();
-    renderQuestion.innerHTML = "Quiz complete!";
-    renderOptions.appendChild(document.querySelector(".scoreButton"));
+    renderQuestion.innerHTML = `Your chops score is ${finalScore}%!!`;
+    document.querySelector(".full-question").appendChild(document.querySelector(".scoreButton"));
   }
 }
 
 function optionsList() {
   renderTime();
   var options = questions[index].choices;
+  let answer = questions[index].answer;
   for (var a = 0; a < options.length; a++) {
     var optionBtn = document.createElement("button");
     optionBtn.className = "btn btn-primary";
     optionBtn.innerHTML = options[a];
     renderOptions.append(optionBtn);
-    optionBtn.addEventListener("click", function () {
+    optionBtn.addEventListener("click", function (e) {
       while (renderOptions.hasChildNodes()) {
         renderOptions.removeChild(renderOptions.firstChild);
       }
+
+      if (e.target.innerHTML === answer) {
+          finalScore += 10;
+      }
+
       index++;
       questionList();
       stopTimer();
@@ -115,13 +122,3 @@ function optionsList() {
     });
   }
 }
-
-// for (var i = 0; i < questions.length; i++) {
-//     var optionBtn = document.getElementsByClassName("btn");
-//     var response = optionBtn.addEventListener("click");
-//     var score = 0;
-//     if (response === questions[1].answer) {
-//         score++;
-//         alert(correct);
-//     }
-// }
