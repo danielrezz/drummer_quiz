@@ -13,7 +13,7 @@
 <img src="Screen Shot 2020-11-08 at 8.02.32 AM.png"> 
 
 <p>
-    The way I choose to approach a lot of my projects is simplicity, yet cleanliness. I like to use big buttons with smooth effects to really emphasize the user's feel for the website. The background color is an off white to represent the color of a drum head, while the text boxes are silver and goldto represent metallic drum hardware.
+    The way I choose to approach a lot of my projects is simplicity, yet cleanliness. I like to use big buttons with smooth effects to really emphasize the user's feel for the website. The background color is an off white to represent the color of a drum head, while the text boxes are silver and gold to represent metallic drum hardware.
 </p>
 
 <h2>
@@ -21,7 +21,7 @@
 </h2>
 
 <p>
-    When you open up the drum quiz, you are first shown the rules of how to take the quiz. You can see a Start button )Let's Go) and a scoreboard button. As soon as you press the Start button, you are immediately taken into the questions with a timer of 10 seconds. Better be quick! If the timer hits 0, you get that question wrong and move on to the next one. Once the game ends, you are able to enter your initials to be saved into a scoreboard.
+    When you open up the drum quiz, you are first shown the rules of how to take the quiz. You can see a Start button )Let's Go) and a scoreboard button. As soon as you press the Start button, you are immediately taken into the questions with a timer of 10 seconds. Better be quick! If the timer hits 0, you get that question wrong and move on to the next one. Once the game ends, you are able to enter your band's name to be saved into a scoreboard.
 </p>
 
 <h2>
@@ -29,9 +29,5 @@
 </h2>
 
 <p>
-    Admittedly, this project was very challenging for me. I am still trying to figure out certain parts like resetting the timer, adding user data to local storage, and ending the game.
-
-
-
-    The biggest challenge was getting the questions and answers to populate after a click which took up most of my time. This project is still incomplete, but I am determined to get it working.
+    This was one of my first projects using Javascript and was quite the challenge. The biggest challenge was setting up the timer's functionality. Everything from starting the timer, to resetting the timer, to stopping the timer took a lot of moving parts. Once each component of the timer was set up within a function, I just had to figure out where to place each function. Overall, I feel like I learned a lot!
 </p>
