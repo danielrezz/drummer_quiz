@@ -21,7 +21,7 @@
 </h2>
 
 <p>
-    When you open up the drum quiz, you are first shown the rules of how to take the quiz. You can see a Start button )Let's Go) and a scoreboard button. As soon as you press the Start button, you are immediately taken into the questions with a timer of 10 seconds. Better be quick! If the timer hits 0, you get that question wrong and move on to the next one. Once the game ends, you are able to enter your band's name to be saved into a scoreboard.
+    When you open up the drum quiz, you are first shown the rules of how to take the quiz. You can see a Start button )Let's Go) and a scoreboard button. As soon as you press the Start button, you are immediately taken into the questions with a timer of 10 seconds. Better be quick! If the timer hits 0, you get that question wrong and move on to the next one. Once the game ends, you are able to enter your band's name to be saved into a scoreboard using Local Storage.
 </p>
 
 <h2>
