@@ -124,7 +124,7 @@ function optionsList() {
 }
 
 let leaderboard = () => {
-    window.location.href = "/leaderboard.html";
+    window.location.href = "/leaderboard/index.html";
 }
 
 init();
